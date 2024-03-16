@@ -1,0 +1,2 @@
+com.newaim.framework.redis.config.NewaimRedisAutoConfiguration
+com.newaim.framework.redis.config.NewaimCacheAutoConfiguration

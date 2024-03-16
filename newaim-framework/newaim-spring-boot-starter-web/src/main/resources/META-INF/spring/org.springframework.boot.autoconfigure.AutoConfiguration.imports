@@ -1,0 +1,4 @@
+com.newaim.framework.jackson.config.NewaimJacksonAutoConfiguration
+com.newaim.framework.swagger.config.NewaimSwaggerAutoConfiguration
+com.newaim.framework.web.config.NewaimWebAutoConfiguration
+com.newaim.framework.banner.config.NewaimBannerAutoConfiguration

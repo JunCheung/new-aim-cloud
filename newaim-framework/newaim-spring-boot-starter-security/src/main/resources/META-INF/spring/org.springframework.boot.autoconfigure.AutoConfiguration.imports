@@ -1,0 +1,3 @@
+com.newaim.framework.security.config.NewaimSecurityRpcAutoConfiguration
+com.newaim.framework.security.config.NewaimSecurityAutoConfiguration
+com.newaim.framework.security.config.NewaimWebSecurityConfigurerAdapter

@@ -1,0 +1,22 @@
+--- #################### 注册中心相关配置 ####################
+
+spring:
+  cloud:
+    nacos:
+      server-addr: nacos:8848
+      discovery:
+        namespace: new-aim
+        metadata:
+          version: 1.0.0
+
+--- #################### 配置中心相关配置 ####################
+
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: nacos:8848
+        namespace: new-aim
+        group: DEFAULT_GROUP
+        name: ${spring.application.name}
+        file-extension: yaml
