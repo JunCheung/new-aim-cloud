@@ -1,0 +1,46 @@
+version: '3'
+services:
+  gateway:
+    build:
+      context: ../newaim-gateway/
+      dockerfile: Dockerfile
+    ports:
+      - "38080:38080"
+    environment:
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER_ADDR=nacos:8848
+      - SPRING_PROFILES_ACTIVE=dev
+    restart: on-failure
+    networks:
+      - new-aim
+
+  system-server:
+    build:
+      context: ../newaim-module-system/newaim-module-system-biz/
+      dockerfile: Dockerfile
+    ports:
+      - "38081:38081"
+    environment:
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER_ADDR=nacos:8848
+      - SPRING_PROFILES_ACTIVE=dev
+    restart: on-failure
+    networks:
+      - new-aim
+
+  product-server:
+    build:
+      context: ../newaim-module-product/newaim-module-product-biz/
+      dockerfile: Dockerfile
+    ports:
+      - "38100:38100"
+    environment:
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER_ADDR=nacos:8848
+      - SPRING_PROFILES_ACTIVE=dev
+    volumes:
+      - /root/new-aim/crt/:/root/new-aim/crt/
+    restart: on-failure
+    networks:
+      - new-aim
+networks:
+  new-aim:
+    external:
+      name: new-aim

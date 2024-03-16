@@ -3,7 +3,7 @@
 spring:
   cloud:
     nacos:
-      server-addr: nacos:8848
+      server-addr: ${SPRING_CLOUD_NACOS_DISCOVERY_SERVER_ADDR}
       discovery:
         namespace: new-aim
         metadata:
@@ -16,7 +16,7 @@ spring:
     nacos:
       # Nacos Config 配置项，对应 NacosConfigProperties 配置属性类
       config:
-        server-addr: nacos:8848
+        server-addr: ${SPRING_CLOUD_NACOS_DISCOVERY_SERVER_ADDR}
         namespace: new-aim
         group: DEFAULT_GROUP
         name: ${spring.application.name}
